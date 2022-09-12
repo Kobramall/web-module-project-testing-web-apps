@@ -111,38 +111,9 @@ test('renders all firstName, lastName and email text when submitted. Does NOT re
         expect(feedback).toBeInTheDocument();
         expect(feedback1).toBeInTheDocument();
         expect(feedback2).toBeInTheDocument();
-        expect(messageDisplay).not.toBeInTheDocument();
     })
 });
 
 test('renders all fields text when all fields are submitted.', async () => {
-    render(<ContactForm />)
-   
-    const nameInput = screen.getByLabelText(/First Name*/i);
-    userEvent.type(nameInput, "Kolten")
 
-    const emailInput = screen.getByLabelText(/Email*/i);
-    userEvent.type(emailInput, "Kbramall11@gmail.com")
-
-    const lastInput = screen.getByLabelText(/Last Name*/i);
-    userEvent.type(lastInput, "Bramall")
-
-    const messageInput = screen.getByLabelText(/Message/i);
-    userEvent.type(messageInput, "Hello World")
-
-    const submitButton = screen.getByRole('button')
-    userEvent.click(submitButton)
-
-    await waitFor(() => {
-        
-        
-        const feedback = screen.queryByText("Kolten");
-        const feedback1 = screen.queryByText("Bramall");
-        const feedback2 = screen.queryByText("Kbramall11@gmail.com")
-        const messageDisplay = screen.queryByText("Hello World")
-        expect(feedback).toBeInTheDocument();
-        expect(feedback1).toBeInTheDocument();
-        expect(feedback2).toBeInTheDocument();
-        expect(messageDisplay).toBeInTheDocument();
-})
 });

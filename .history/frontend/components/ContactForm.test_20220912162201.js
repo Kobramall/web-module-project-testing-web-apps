@@ -144,5 +144,4 @@ test('renders all fields text when all fields are submitted.', async () => {
         expect(feedback1).toBeInTheDocument();
         expect(feedback2).toBeInTheDocument();
         expect(messageDisplay).toBeInTheDocument();
-})
 });
